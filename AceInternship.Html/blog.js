@@ -1,8 +1,8 @@
 const tblBlog = "blogs";
 //readBlog();
 //createBlog();
-//updateBlog("d094ab42-a29f-499a-9704-f62c9a111c57", 'apple', 'banana', 'orange');
-//deleteBlog("22d6b1d0-efc0-4416-9eba-f4e39579c7e4");
+//updateBlog("8bdc8565-d8f3-4c2e-9033-7892031b7c4d", 'apple', 'banana', 'orange');
+//deleteBlog("8bdc8565-d8f3-4c2e-9033-7892031b7c4d");
 
 function readBlog()
 {
@@ -40,7 +40,7 @@ function updateBlog(id, title, author, content)
     {
         lst = JSON.parse(blogs);
     }
-    const items = lst.filter(x == x.id === id);
+    const items = lst.filter(x => x.id === id);
     console.log(items);
     console.log(items.length);
 
@@ -75,7 +75,7 @@ function deleteBlog(id)
         console.log("No Data Found.");
         return;
     }
-    lst = lst.filter(x => x.id === id);
+    lst = lst.filter(x => x.id !== id);
     const jsonBlog = JSON.stringify(lst);
     localStorage.setItem(tblBlog, jsonBlog);
 }
