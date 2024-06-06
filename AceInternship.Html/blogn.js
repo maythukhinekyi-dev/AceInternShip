@@ -82,21 +82,33 @@ function updateBlog(id, title, author, content)
 
 function deleteBlog(id)
 {
-    let result = confirm("Are you sure want to delete?");
-    if (!result) return;
-    let lst = getBlogs();
-    const items = lst.filter(x => x.id === id);
-    if (items.length == 0)
-    {
-        console.log("No Data Found.");
-        return;
-    }
-    lst = lst.filter(x => x.id !== id);
-    const jsonBlog = JSON.stringify(lst);
-    localStorage.setItem(tblBlog, jsonBlog);
+    Notiflix.Confirm.show(
+        'Delete Confirm',
+        'Are you sure want to delete?',
+        'Yes',
+        'No',
+        function okCb()
+        {
+            let lst = getBlogs();
+            const items = lst.filter(x => x.id === id);
+            if (items.length == 0)
+            {
+                console.log("No Data Found.");
+                return;
+            }
+            lst = lst.filter(x => x.id !== id);
+            const jsonBlog = JSON.stringify(lst);
+            localStorage.setItem(tblBlog, jsonBlog);
 
-    successMessage("Deleting Successful!");
-    getBlogTable();
+            successMessage("Deleting Successful!");
+            getBlogTable();
+        },
+        function cancelCb()
+        {
+            return;
+        }
+    );
+
 }
 
 function uuidv4()
@@ -126,12 +138,23 @@ $('#btnSave').click(function ()
 
     if (blogId === null)
     {
+        Notiflix.Loading.hourglass();
         createBlog(title, author, content);
+        setTimeout(() =>
+        {
+            Notiflix.Loading.remove();
+        }, 2000);
     }
     else
     {
+        Notiflix.Loading.circle();
         updateBlog(blogId, title, author, content);
         blogId = null;
+        setTimeout(() =>
+        {
+            Notiflix.Loading.remove();
+        }, 2000);
+
     }
     getBlogTable();
 
@@ -139,12 +162,13 @@ $('#btnSave').click(function ()
 
 function successMessage(message)
 {
-    alert(message);
+    Notiflix.Notify.success(message);
 }
+
 
 function errorMessage(message)
 {
-    alert(message);
+    Notiflix.Notify.failure(message);
 }
 
 function clearControl()
