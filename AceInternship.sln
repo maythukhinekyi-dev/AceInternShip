@@ -10,6 +10,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Documents", "Documents", "{
 		README.md = README.md
 	EndProjectSection
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AceInternship.ConsoleApp", "AceInternship.ConsoleApp\AceInternship.ConsoleApp.csproj", "{725F3801-26E6-4FBF-ACCD-97448B505ACF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AceInternship.MiniKPayWebApi", "AceInternship.MiniKPayWebApi\AceInternship.MiniKPayWebApi.csproj", "{DBD9E2D8-A040-4625-A273-8D68E857D200}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -20,6 +24,14 @@ Global
 		{1680D055-9D92-4B7D-85B7-5D03E32AB5C6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1680D055-9D92-4B7D-85B7-5D03E32AB5C6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1680D055-9D92-4B7D-85B7-5D03E32AB5C6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{725F3801-26E6-4FBF-ACCD-97448B505ACF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{725F3801-26E6-4FBF-ACCD-97448B505ACF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{725F3801-26E6-4FBF-ACCD-97448B505ACF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{725F3801-26E6-4FBF-ACCD-97448B505ACF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DBD9E2D8-A040-4625-A273-8D68E857D200}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DBD9E2D8-A040-4625-A273-8D68E857D200}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DBD9E2D8-A040-4625-A273-8D68E857D200}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DBD9E2D8-A040-4625-A273-8D68E857D200}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
